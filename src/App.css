@@ -2,7 +2,9 @@
   text-align: start;
   background-color: #f5f5f5;
 }
-
+.title{
+  margin-left: 3rem;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -130,5 +132,6 @@ a{
   border-style: solid  ;
 }
 .footernav{
-  font-weight: lighter;
+ 
+  font-weight: bold;
 }
