@@ -26,23 +26,29 @@ const url = `https://hn.algolia.com/api/v1/search_by_date?tags=(story,poll)`
   const getData = async () => {
     setLoading(true)
     const response = await fetch(queryString)
+    let result = ""
     console.log(response)
+  try{
     if (response.ok) {
-      const result = await response.json();
-      console.log(result)
+      result = await response.json();
+      console.log(result)}
       if (result.hits.length === 0) {
-        setError("There isn't any data");
+        alert("Not even a single result..")
       }
       setNewsListData(() => result.hits)
       setNbPages(()=> result.nbPages)
       setPageIndex(()=> result.page )
-    }
 
-    setLoading(false)
-  }
+    } catch (error) {
+      console.error("Not even a single result..")
+      setError("There isn't any data");}}
+    
+
+    
   
   
   
+    
   return (
 
     <div className="App">
@@ -63,7 +69,7 @@ const url = `https://hn.algolia.com/api/v1/search_by_date?tags=(story,poll)`
       <Footer />
     </div>
   )
-}
+  }
 
 
 

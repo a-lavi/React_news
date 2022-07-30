@@ -58,9 +58,11 @@ ul {
   list-style: none;
   
 }
-a:hover {
-  background-color: yellow;
-}
+li>a:hover {
+  background-color: yellow;}
+  p:hover {
+    background-color: white;
+  }
 a:link {
   color: None;
 }
