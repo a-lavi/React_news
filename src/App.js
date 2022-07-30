@@ -27,19 +27,26 @@ const url = `https://hn.algolia.com/api/v1/search_by_date?tags=(story,poll)`
     setLoading(true)
     const response = await fetch(queryString)
     console.log(response)
+  try{
     if (response.ok) {
       const result = await response.json();
       console.log(result)
       if (result.hits.length === 0) {
-        setError("There isn't any data");
+        alert("no result")
       }
+
+    } catch (error) {
+      console.error("Something bad happened")
+      setError("There isn't any data");}
+    
+
       setNewsListData(() => result.hits)
       setNbPages(()=> result.nbPages)
       setPageIndex(()=> result.page )
     }
 
-    setLoading(false)
-  }
+    
+  
   
   
   
