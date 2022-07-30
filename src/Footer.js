@@ -1,9 +1,9 @@
 function Footer(){
     return(
         <div className="footerflex">
-        <p className="footernav"> About </p>
-        <p className="footernav"> Contact </p>
-        <p className="footernav"> Buy me a Coffee <br/> most important</p>
+        <a><p className="footernav"> About </p>  </a>
+        <a><p className="footernav"> Contact </p> </a>
+        <a><p className="footernav"> Buy me a Coffee </p> </a>
         </div>
     )
 }
