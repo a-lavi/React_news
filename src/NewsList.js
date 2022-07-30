@@ -17,7 +17,7 @@ console.log(handler)
           
               <li key={index}>
                 <a href={news.url}>{news.title}</a>
-                <span><a href="">{news.author}</a>
+                <span><a className="user" href="">{news.author}</a>
                 <a></a></span>
                 </li>
           )})    
@@ -25,9 +25,9 @@ console.log(handler)
      
       
       </ul>
-      <div>
-        <input type="text" onChange={inputHandler} />
-        <button onClick={()=>{setQueryString(`http://hn.algolia.com/api/v1/search?query=${handler}`)}}>Search</button>
+      <div className="searchflex">
+        <input className="searchBar" type="text" onChange={inputHandler} />
+        <button className="searchButton" onClick={()=>{setQueryString(`http://hn.algolia.com/api/v1/search?query=${handler}`)}}>Search</button>
       </div>
     </div>
 
