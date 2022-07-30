@@ -10,6 +10,7 @@ console.log(handler)
 
   return (
     <div className="newlistData">
+      <h1>Test</h1>
       <ul>
         {newsListData.map((news,index) => {
           
