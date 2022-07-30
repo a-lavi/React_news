@@ -14,10 +14,13 @@ const Pagination = ({pageIndex,url, setPageIndex, queryString,setQueryString,nbP
  
   
     return (
-    <div>
-        <div>{pageIndex === 0 ? (<button disabled={true} >Back</button>):<button onClick={paginateback}>Back</button> }</div>
-<div>
-    <div>{pageIndex === nbPages ? (<button disabled={true} onClick={paginatefor}>Next</button>):<button onClick={paginatefor}>Next</button> }</div>
+    <div className="buttonflex">
+        <div>
+          {pageIndex === 0 ? (<button className="pagbutton" disabled={true} >Back</button>):<button className="pagbutton" onClick={paginateback}>Back</button> }
+          </div>
+      <div>
+    <div>{pageIndex === nbPages ? (<button className="pagbutton" disabled={true} onClick={paginatefor}>Next</button>):<button className="pagbutton" onClick={paginatefor}>Next</button> }
+    </div>
     </div>
         
         

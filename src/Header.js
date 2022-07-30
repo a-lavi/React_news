@@ -1,9 +1,9 @@
 function Header(){
     return(
         <div className="headerflex">
-        <p> Home </p>
-        <p> News </p>
-        <p> About</p>
+        <p className="headernav"> Home </p>
+        <p className="headernav"> News </p>
+        <p className="headernav"> About</p>
         </div>
     )
 }
