@@ -1,6 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState} from "react";
+import { useNavigate } from "react-router-dom";
+import Search from "./Components/Search";
 
 function NewsList({newsListData, setQueryString}) {
+  const navigate = useNavigate()
+  const navQuery= ()=>{
+      setQueryString(`http://hn.algolia.com/api/v1/search?query=${handler}`)
+  navigate('/search')
+  }
   const [handler, setHandler] = useState("")
   const inputHandler = (event)=>{
 setHandler(event.target.value)
@@ -28,8 +35,9 @@ console.log(handler)
       </ul>
       <div className="searchflex">
         <input className="searchBar" type="text" onChange={inputHandler} />
-        <button className="searchButton" onClick={()=>{setQueryString(`http://hn.algolia.com/api/v1/search?query=${handler}`)}}>Search</button>
+        <button to="/search" className="searchButton" onClick={navQuery}>Search</button>
       </div>
+      
     </div>
 
   )

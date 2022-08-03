@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { useState, useEffect } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes,Navigate } from "react-router-dom";
 import NewsList from "./NewsList.js"
 import Header from "./Header.js"
 import Footer from "./Footer.js"
@@ -31,7 +31,7 @@ const url = `https://hn.algolia.com/api/v1/search_by_date?tags=(story,poll)`
   try{
     if (response.ok) {
       result = await response.json();
-      console.log(result)}
+      }
       if (result.hits.length === 0) {
         alert("Not even a single result..")
       }
@@ -55,9 +55,9 @@ const url = `https://hn.algolia.com/api/v1/search_by_date?tags=(story,poll)`
       <Header />
       <Routes>
         <Route path="/users/:username" element={<Users />} />
-        <Route path="/" element={<NewsList newsListData={newsListData} setQueryString={setQueryString} />} />
+        <Route exact path="/" element={<NewsList newsListData={newsListData} setQueryString={setQueryString} />} />
         <Route path="/items/:id" element={<Items />} />
-        <Route path="/search" element={<Search />} />
+        <Route path="/search" element={<Search newsListData={newsListData} setQueryString={setQueryString}/>} />
       </Routes>
       <Pagination 
       queryString={queryString} 
